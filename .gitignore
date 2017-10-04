@@ -1,3 +1,10 @@
 *.suo
 CS7/CS7/CS7.Tests/obj/
 CS7/CS7/CS7/obj/
+CS7/CS7/CS7.Tests/bin/
+CS7/CS7/CS7/bin/Debug/netcoreapp1.1/CS7.deps.json
+CS7/CS7/CS7/bin/
+CS7/CS7/WhatsNewInCS7.Tests/bin/
+CS7/CS7/WhatsNewInCS7.Tests/obj/
+CS7/CS7/WhatsNewInCS7/bin/
+CS7/CS7/WhatsNewInCS7/obj/
