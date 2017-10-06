@@ -18,6 +18,18 @@ namespace WhatsNewInCS7
         }
 
         /// <summary>
+        /// Gets the first name from the parameters
+        /// </summary>
+        /// <param name="items">Expects 3 names - first, middle and family. Exception will be thrown if more or less arguments than 3 are supplied</param>
+        /// <returns>Returns the first name of the person</returns>
+        public static string GetFirstName(params string[] items)
+        {
+            string result;
+            (result, _, _) = ConvertToTuple(items);
+            return result;
+        }
+
+        /// <summary>
         /// Converts it's arguments into a tuple with no named elements
         /// </summary>
         /// <param name="items">Expects 3 names - first, middle and family. Exception will be thrown if more or less arguments than 3 are supplied</param>

@@ -29,6 +29,18 @@ namespace WhatsNewInCS7.Tests
             expected[1].Should().Be(actual2.Item2, $"The middle name '{middleName}' was converted to {actual2.Item2}, which did not match the expected value of {expected[1]}");
             expected[2].Should().Be(actual2.Item3, $"The family name '{familyName}' was converted to {actual2.Item3}, which did not match the expected value of {expected[2]}");
         }
+        
+        [Theory]
+        [InlineData("John", "Paul", "II")]
+        [InlineData("One", "Two", "Three")]
+        [InlineData("Angelina", "Jolie", "Pitt")]
+        public void TestGetFirstName_Should_return_a_valid_Tuple(string firstName, string middleName, string familyName)
+        {
+            var actualTuple = Tuples.ConvertToTuple(firstName, middleName, familyName);
+            var actualName = Tuples.GetFirstName(firstName, middleName, familyName);
+
+            actualName.Should().Be(actualTuple.FirstName, $"The first name '{firstName}' was converted to {actualTuple.FirstName}, which did not match the expected value of {actualName}");
+        }
 
         [Theory]
         [InlineData("John", "Smith", null)]
