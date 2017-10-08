@@ -11,8 +11,9 @@ namespace WhatsNewInCS7
         /// <returns>A ValueTuple, containing the names</returns>
         public static (string FirstName, string MiddleName, string FamilyName) ConvertToTuple(params string[] items)
         {
+            items = items ?? throw new ArgumentException("The argument cannot be null");
             // To use ValueTuples, you should install the Nuget package System.ValueTuple
-            if (items == null || items.Length != 3)
+            if (items.Length != 3)
                 throw new ArgumentException("Three names should be supplied for a tuple to be created.");
             return (items[0], items[1], items[2]);
         }
